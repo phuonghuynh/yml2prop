@@ -6,6 +6,8 @@
    <packaging>maven-plugin</packaging>
    <version>1.0</version>
 
+   <name>Yaml to Properties Plugin</name>
+
    <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <jdk.version>1.5</jdk.version>
@@ -74,7 +76,7 @@
          <distribution>repo</distribution>
       </license>
    </licenses>
-   
+
    <scm>
       <url>https://github.com/phuonghuynh/yml2prop</url>
       <connection>scm:git:git://github.com/phuonghuynh/yml2prop.git</connection>
