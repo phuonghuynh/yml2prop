@@ -1,0 +1,12 @@
+dev:
+  elasticsearch:
+    cluster:
+      name: staging-es-w-chef
+    host: 172.16.22.27:9300
+  scheduled:
+    cron: 0/1 * * * * *
+
+prod:
+  scheduled:
+    cron: 0 0/5 * * * *
+  
