@@ -76,6 +76,11 @@
          <distribution>repo</distribution>
       </license>
    </licenses>
+   
+   <issueManagement>
+      <url>https://github.com/phuonghuynh/yml2prop/issues</url>
+      <system>GitHub Issues</system>
+   </issueManagement>
 
    <scm>
       <url>https://github.com/phuonghuynh/yml2prop</url>
