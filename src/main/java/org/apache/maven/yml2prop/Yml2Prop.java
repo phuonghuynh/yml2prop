@@ -17,6 +17,11 @@ import org.apache.maven.plugins.annotations.Parameter;
 import org.codehaus.plexus.util.StringUtils;
 import org.yaml.snakeyaml.Yaml;
 
+/**
+ * Read and transfer YAML document into Properties
+ * 
+ * @author phuonghqh
+ * */
 @Mojo(name = "run")
 public class Yml2Prop extends AbstractMojo {
 
@@ -29,6 +34,13 @@ public class Yml2Prop extends AbstractMojo {
    @Parameter(alias = "destProp", defaultValue = "${basedir}/src/main/resources/application.properties")
    private String destProp;
 
+   /**
+    * Run yaml processing
+    * 
+    * @throws {@link MojoExecutionException}
+    * @throws {@link MojoFailureException}
+    * @return
+    * */
    @SuppressWarnings("unchecked")
    public void execute() throws MojoExecutionException, MojoFailureException {
       try {
@@ -56,6 +68,14 @@ public class Yml2Prop extends AbstractMojo {
       }
    }
 
+   /**
+    * Iterate yaml entry and push values into properties
+    * 
+    * @param properties
+    * @param ymlEntry
+    * @param rootKey
+    * @return 
+    * */
    @SuppressWarnings("unchecked")
    private void iterateAndProcess(Properties properties, Map<String, Object> ymlEntry, String rootKey) {
       for (String key : ymlEntry.keySet()) {
@@ -64,8 +84,8 @@ public class Yml2Prop extends AbstractMojo {
             properties.setProperty(StringUtils.isEmpty(rootKey) ? key : rootKey + "." + key, value.toString());
          }
          else if (value instanceof Map) {
-            iterateAndProcess(properties, (Map<String, Object>) value, StringUtils.isEmpty(rootKey) ? key : rootKey + "."
-                  + key);
+            iterateAndProcess(properties, (Map<String, Object>) value, StringUtils.isEmpty(rootKey) ? key : rootKey
+                  + "." + key);
          }
       }
    }
