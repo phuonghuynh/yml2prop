@@ -6,6 +6,7 @@ This is a Maven Plugin which helps to generate java *.properties from *.yml (www
 ## Issue of do maintain java *.properties
 Building the same artifact for different environments (`staging`, `development`, `production`...) has always been an annoyance. Developer need to do maintainance multiple .properties files (as given tree bellow). Actually, they have a few different values, such as : `connection.url`, `connection.usname`, `connection.pwd`...
 Maven Profile plugin is a great tool to help when giving you an ability to do maintain your files, see [Maven Profile guide!](http://maven.apache.org/guides/mini/guide-building-for-different-environments.html). In short, your files will be in a tree like bellow
+```
 ├── resources
 │   ├── dev
 │   │   ├── log4j.properties
@@ -13,6 +14,7 @@ Maven Profile plugin is a great tool to help when giving you an ability to do ma
 │   └── local
 │       ├── log4j.properties
 │       └── application.properties
+```
 This is actual annoying if you have so many many environments and many many many properties need your maintenance (like my `sample.properties` - soure code).
 
 ## Example configuration
