@@ -77,8 +77,8 @@ elasticsearch.cluster.name=XXXXXXXX:9300
 elasticsearch.host=172.16.22.27\:9300
 ```
 #### Configuration parameters:
-> `sourceYaml`: String - source path of your yaml file
-> `entries`: Array of Strings - array of names that will be used to extracted to *.properties, ex: dev, prod, staging...
-> `destProp`: String - destination path of your properties file
+- `sourceYaml`: String - source path of your yaml file
+- `entries`: Array of Strings - array of names that will be used to extracted to *.properties, ex: dev, prod, staging...
+- `destProp`: String - destination path of your properties file
 
 **Please fell free to contribute.**
