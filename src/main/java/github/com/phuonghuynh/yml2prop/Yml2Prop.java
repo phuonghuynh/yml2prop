@@ -1,4 +1,4 @@
-package org.apache.maven.yml2prop;
+package github.com.phuonghuynh.yml2prop;
 
 import java.io.File;
 import java.io.FileInputStream;
