@@ -80,12 +80,12 @@ public class Yml2Prop extends AbstractMojo {
    private void iterateAndProcess(Properties properties, Map<String, Object> ymlEntry, String rootKey) {
       for (String key : ymlEntry.keySet()) {
          Object value = ymlEntry.get(key);
-         if (value instanceof String || value instanceof List) {
-            properties.setProperty(StringUtils.isEmpty(rootKey) ? key : rootKey + "." + key, value.toString());
-         }
-         else if (value instanceof Map) {
-            iterateAndProcess(properties, (Map<String, Object>) value, StringUtils.isEmpty(rootKey) ? key : rootKey
+         if (value instanceof Map) {
+             iterateAndProcess(properties, (Map<String, Object>) value, StringUtils.isEmpty(rootKey) ? key : rootKey
                   + "." + key);
+         }
+         else {
+             properties.setProperty(StringUtils.isEmpty(rootKey) ? key : rootKey + "." + key, value.toString());
          }
       }
    }
