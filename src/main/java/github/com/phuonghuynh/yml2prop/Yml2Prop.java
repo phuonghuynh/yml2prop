@@ -25,13 +25,13 @@ import org.yaml.snakeyaml.Yaml;
 @Mojo(name = "run")
 public class Yml2Prop extends AbstractMojo {
 
-   @Parameter(alias = "sourceYaml", required = true)
+   @Parameter(required = true)
    private String sourceYaml;
 
-   @Parameter(alias = "entries", required = true)
-   private String[] entryNames;
+   @Parameter(required = true)
+   private List<String> entries;
 
-   @Parameter(alias = "destProp", defaultValue = "${basedir}/src/main/resources/application.properties")
+   @Parameter(defaultValue = "${basedir}/src/main/resources/application.properties")
    private String destProp;
 
    /**
@@ -47,7 +47,7 @@ public class Yml2Prop extends AbstractMojo {
          Yaml yaml = new Yaml();
          Map<String, Object> map = (Map<String, Object>) yaml.load(new FileInputStream(new File(sourceYaml)));
          Properties properties = new Properties();
-         for (String entryName : entryNames) {
+         for (String entryName : entries) {
             if (StringUtils.isEmpty(entryName)) {
                continue;
             }
