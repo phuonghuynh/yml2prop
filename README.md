@@ -63,7 +63,7 @@ The given example is to generate `prod` from `dev`.
       <plugin>
          <groupId>com.github.phuonghuynh</groupId>
          <artifactId>yml2prop</artifactId>
-         <version>1.2</version>
+         <version>1.3</version>
          <configuration>
             <sourceYaml>${basedir}/src/main/resources/test.yml</sourceYaml>
             <entries>
