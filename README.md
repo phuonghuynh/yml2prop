@@ -36,7 +36,7 @@ local:
     driverClass: com.impossibl.postgres.jdbc.PGDriver
     pool.maxSize: 5
   base:
-    url: http://52.26.123.153:8080/bizi-webtool/
+    url: http://sample.com/sample-app/
     adminTool.url: http://localhost:9090/
 
   bizi.admin.api.root.url: http://localhost:9090/api/%s
@@ -50,10 +50,10 @@ staging:
     password: password
 
   base:
-    url: http://52.26.123.153:8080/bizi-webtool/
-    adminTool.url: http://52.26.123.153:8080/bizi-admin/
+    url: http://sample.com/sample-app/
+    adminTool.url: http://sample.com/sample-api/
 
-  bizi.admin.api.root.url: http://52.26.123.153:8080/bizi-admin/api/%s
+  bizi.admin.api.root.url: http://sample.com/sample-api/api/%s
 ```
 
 The given example is to generate `prod` from `dev`.
@@ -98,7 +98,7 @@ redis.expire.time.min=30
 webapp.resource.location=/assets/
 db.user=postgres
 core.encryptor.passphrase=6jNugJnQ
-base.url=http\://52.26.123.153\:8080/bizi-webtool/
+base.url=http\://sample.com/sample-app/
 db.pool.maxSize=5
 spring.profiles.active=${spring.profile}
 base.adminTool.url=http\://localhost\:9090/
